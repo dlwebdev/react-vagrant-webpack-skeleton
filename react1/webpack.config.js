@@ -1,8 +1,8 @@
 module.exports = {
-	entry: './main.js',
+	entry: './src/App.js',
 	output: {
-		path: './',
-		filename: 'index.js'
+		path: __dirname,
+		filename: 'app.js'
 	},
 	devServer: {
 		inline: true,
@@ -10,15 +10,13 @@ module.exports = {
 		port: 8080
 	},
 	module: {
-		loaders: [
-			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				loader: 'babel',
-				query: {
-					presets: ['es2015', 'react']
-				}
+		loaders: [{
+			test: /\.js$/,
+			exclude: /node_modules/,
+			loader: 'babel',
+			query: {
+				presets: ['es2015', 'react']
 			}
-		]
+		}]
 	}
 }
